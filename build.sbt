@@ -1,10 +1,10 @@
-name := "zentask"
+name := "zentasks"
 
 version := "0.0.1"
 
 organization := "com.github.masseguillaume"
 
-scalaVersion := "2.9.1"
+scalaVersion := "2.9.2"
 
 resolvers ++= Seq(
 	"snapshots"	at "http://oss.sonatype.org/content/repositories/snapshots",
@@ -18,11 +18,11 @@ scalacOptions ++= Seq("-deprecation", "-unchecked")
 libraryDependencies ++= {
 	val liftVersion = "2.5-SNAPSHOT"
 	Seq(
-		"net.liftweb"					%% "lift-webkit"				% liftVersion			% "compile",
-		"net.liftmodules"				%% "lift-jquery-module"		% (liftVersion + "-1.0-SNAPSHOT"),
-		"org.eclipse.jetty"	 		 % "jetty-webapp"				% "7.5.4.v20111024"	% "container; test",
-		"ch.qos.logback"		 		 % "logback-classic"			% "1.0.6",
-		"org.seleniumhq.selenium" 	 % "selenium-java" 			% "2.21.0",
-		"org.scalatest"				%% "scalatest"					% "2.0.M3"				% "test"
+		"net.liftweb"             %% "lift-webkit"        % liftVersion         % "compile" withSources(),
+		"net.liftmodules"         %% "lift-jquery-module" % (liftVersion + "-1.0-SNAPSHOT"),
+		"org.eclipse.jetty"        % "jetty-webapp"				% "7.5.4.v20111024"   % "container; test",
+		"ch.qos.logback"           % "logback-classic"    % "1.0.6",
+		"org.seleniumhq.selenium"  % "selenium-java"      % "2.21.0",
+		"org.scalatest"           %% "scalatest"          % "2.0.M3"            % "test" withSources()
   )
 }

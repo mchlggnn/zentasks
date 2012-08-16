@@ -1,3 +1,9 @@
+# ensime
+.ensime*
+
+# selenium
+chromedriver.log
+
 src/main/resources/props/production.*
 .history
 
