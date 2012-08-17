@@ -1,10 +1,8 @@
-@(folder: String, tasks: Seq[Task] = Nil)
-
-<div class="folder" data-folder-id="@folder">
+<div class="folder">
     <header>
         <input type="checkbox" />
-        <h3>@folder</h3>
-        <span class="counter"></span>
+        <h3>Folder name</h3>
+        <span class="counter">1</span>
         <dl class="options">
             <dt>Options</dt>
             <dd>
@@ -13,12 +11,9 @@
                 <a class="deleteFolder" href="#">Delete folder</a>
             </dd>
         </dl>
-        <span class="loader">Loading</span>
     </header>
     <ul class="list">
-        @tasks.map { task =>
-            @views.html.tasks.item( task )
-        }
+        <div data-lift="embed?what=embed-hidden/tasks/item"></div>
     </ul>
     <form class="addTask">
         <input type="hidden" name="folder" value="@folder" />

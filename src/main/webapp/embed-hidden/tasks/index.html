@@ -1,42 +1,32 @@
-@(project:Project, tasks: Seq[Task], team: Seq[User])
+<lift:children>
 
-<header>
-    <hgroup>
-        <h1>@project.folder</h1>
-        <h2>@project.name</h2>
-    </hgroup>
-    <dl class="users">
-        <dt>Project's team</dt>
-        <dd>
-            <div class="wrap">
-                <h3>Team mates</h3>
-                <div class="list">
-                    @team.map { user =>
+    <header>
+        <dl class="users">
+            <dt>Project's team</dt>
+            <dd>
+                <div class="wrap">
+                    <h3>Team mates</h3>
+                    <div class="list">
                         <dl data-user-id="@user.email">
                             <dt>@user.name <span>(@user.email)</span></dt>
                             <dd class="action">Action</dd>
                         </dl>
-                    }
-                </div>
-                <h3>Add a team mate</h3>
-                <div class="addUserList">
-                    @User.findAll.diff(team).map { user =>
+                    </div>
+                    <h3>Add a team mate</h3>
+                    <div class="addUserList">
                         <dl data-user-id="@user.email">
                             <dt>@user.name <span>(@user.email)</span></dt>
                             <dd class="action">Action</dd>
                         </dl>
-                    }
+                    </div>
                 </div>
-            </div>
-        </dd>
-    </dl>
-</header>
-<article  class="tasks" id="tasks">
-    @tasks.groupBy(_.folder).map {
-        case (folder, tasks) => {
-            @views.html.tasks.folder(folder, tasks)
-        }
-    }
-    <a href="#newFolder" class="new newFolder">New folder</a>
-</article>
+            </dd>
+        </dl>
+    </header>
 
+    <article class="tasks" id="tasks">
+        <div data-lift="embed?what=embed-hidden/tasks/folder"></div>
+        <a href="#" class="new newFolder">New folder</a>
+    </article>
+
+</lift:children>

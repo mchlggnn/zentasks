@@ -18,7 +18,8 @@ class Boot {
 
 		val entries = List( 
 			Menu.i("Home") / "index",
-			Menu.i("Login") / "login"
+			Menu.i("Login") / "login",
+			Menu.i("Project") / "project"
 		)
 
 		LiftRules.setSiteMap(SiteMap(entries:_*))

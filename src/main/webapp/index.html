@@ -1,30 +1,3 @@
-<body data-lift="surround?with=default;at=content">
-
-	<head>
-		<link rel="stylesheet" type="text/css" media="screen" href="stylesheet/main.css">
-	</head>	
-
-	<header>
-		<a href="/" id="logo"><span>Zen</span>tasks</a>
-            <dl id="user">
-                <dt>username <span>email</span></dt>
-                <dd>
-                    <a href="/logout">Logout</a>
-                </dd>
-            </dl>
-        </header>
-        <nav>
-            <h4 class="dashboard"><a href="#/">Dashboard</a></h4>
-            <ul id="projects">
-                <div data-lift="embed?what=embed-hidden/project">
-
-                </div>
-            </ul>
-            <button id="newGroup">New project</button>
-        </nav>
-
-        <section id="main">
-            <div data-lift="embed?what=embed-hidden/dashboard">
-            </div>
-        </section>
-</body>
+<lift:surround with="zentask" at="content">
+    <div data-lift="embed?what=embed-hidden/dashboard"></div>
+</lift:surround>
