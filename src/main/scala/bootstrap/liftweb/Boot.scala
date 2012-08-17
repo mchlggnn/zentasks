@@ -14,9 +14,12 @@ import net.liftweb.http.js.jquery._
 class Boot {
   def boot {
 
-		LiftRules.addToPackages("com.github.masseguillaume")
+		LiftRules.addToPackages("com.github.masseguillaume.zentasks")
 
-		val entries = List( Menu.i("Home") / "index" )
+		val entries = List( 
+			Menu.i("Home") / "index",
+			Menu.i("Login") / "login"
+		)
 
 		LiftRules.setSiteMap(SiteMap(entries:_*))
 
