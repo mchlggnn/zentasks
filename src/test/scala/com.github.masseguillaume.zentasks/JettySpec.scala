@@ -1,4 +1,4 @@
-package com.github.masseguillaume
+package com.github.masseguillaume.zentasks
 
 import org.scalatest._
 

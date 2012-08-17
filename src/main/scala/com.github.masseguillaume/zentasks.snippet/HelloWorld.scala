@@ -1,4 +1,4 @@
-package com.github.masseguillaume.snippet
+package com.github.masseguillaume.zentasks.snippet
 
 import net.liftweb.http.{S, SHtml}
 import net.liftweb.http.js.JsCmds
