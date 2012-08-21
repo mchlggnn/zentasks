@@ -4,8 +4,10 @@
             <h3><a href="#">Project name</a></h3>
         </header>
         
-        <ul class="list">
-            <div data-lift="embed?what=embed-hidden/tasks/item"></div>
-        </ul>
+        <lift:Item.renderWithoutCheckbox eager_eval="true">
+	  <ul class="list">
+            <lift:embed what="embed-hidden/tasks/tasklist"></lift:embed>
+	  </ul>
+	</lift:Item.renderWithoutCheckbox>
     </div>
 </article>
